@@ -7,20 +7,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/0b5f1c4663.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <title>Task List</title>
 </head>
-<body>
+<body style="background-color: antiquewhite">
 
+<div class="row">
+    <div class="col-md-12">
+        <h1>Password Generator</h1>
+    </div>
+</div>
 
+<br>
+<br>
 
 
 <main role="main">
 
-    <div class="container">
+    <div class="row">
+        <div class="container">
+            <div class="col-md-6">
+                <h2>Generate a Password</h2>
+            </div>
 
+            <hr>
+
+            <div>
+                <div class="jumbotron" >
+                    <p style="alignment: center">Secure your password</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <buttton id="generate" type="button" class="btn btn-primary btn-lg">Generate Password</buttton>
+
+            <buttton id="copy" type="button" class="btn btn-primary btn-lg">Copy to clipboard</buttton>
+        </div>
     </div>
+
+
+
+
+
 
 </main>
 
