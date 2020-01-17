@@ -1,5 +1,7 @@
 
-//const passwordElement = document.querySelector('#password')
+const passwordElement = document.querySelector('#password')
+const generateButtonElement = document.querySelector('#generate')
+const copyButtonElement = document.querySelector('#copy')
 
 console.log(getPassword())
 console.log(getPassword())
