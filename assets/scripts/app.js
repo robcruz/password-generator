@@ -1,11 +1,16 @@
-
 const passwordElement = document.querySelector('#password')
 const generateButtonElement = document.querySelector('#generate')
 const copyButtonElement = document.querySelector('#copy')
 
-console.log(getPassword())
-console.log(getPassword())
-console.log(getPassword())
+loadEventListeners()
+
+function loadEventListeners(){
+  generateButtonElement.addEventListener('click', updatePasswordElement)
+}
+
+function updatePasswordElement(){
+  passwordElement.textContent = getPassword()
+}
 
 function getRandCharSet(){
   switch(Math.floor(Math.random() * (4)) + 1){
