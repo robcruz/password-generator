@@ -6,10 +6,16 @@ loadEventListeners()
 
 function loadEventListeners(){
   generateButtonElement.addEventListener('click', updatePasswordElement)
+  copyButtonElement.addEventListener('click', copyToClipboard)
 }
 
 function updatePasswordElement(){
-  passwordElement.textContent = getPassword()
+  passwordElement.value = getPassword()
+}
+
+function copyToClipboard(){
+  passwordElement.select()
+  document.execCommand('copy')
 }
 
 function getRandCharSet(){
