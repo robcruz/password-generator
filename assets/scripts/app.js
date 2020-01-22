@@ -1,33 +1,42 @@
-const passwordElement = document.querySelector('#password')
-const generateButtonElement = document.querySelector('#generate')
-const copyButtonElement = document.querySelector('#copy')
+// const passwordElement = document.querySelector('#password')
+// const generateButtonElement = document.querySelector('#generate')
+// const copyButtonElement = document.querySelector('#copy')
+const specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+const allCapsStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const allLowCaseStr = "abcdefghijklmnopqrstuvwxyz"
+const allNumbers = "0123456789"
+let regex = /^[!"#$%&'()*+,-./:;<=>?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789]{8,256}$/
 
-loadEventListeners()
+// loadEventListeners()
+//
+// function loadEventListeners(){
+//   generateButtonElement.addEventListener('click', updatePasswordElement)
+//   copyButtonElement.addEventListener('click', copyToClipboard)
+// }
+//
+// function updatePasswordElement(){
+//   passwordElement.value = getPassword()
+// }
+//
+// function copyToClipboard(){
+//   passwordElement.select()
+//   document.execCommand('copy')
+// }
 
-function loadEventListeners(){
-  generateButtonElement.addEventListener('click', updatePasswordElement)
-  copyButtonElement.addEventListener('click', copyToClipboard)
-}
+class PasswordGenerator {
 
-function updatePasswordElement(){
-  passwordElement.value = getPassword()
-}
-
-function copyToClipboard(){
-  passwordElement.select()
-  document.execCommand('copy')
 }
 
 function getRandCharSet(){
   switch(Math.floor(Math.random() * (4)) + 1){
     case 1:
-      return "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+      return specialCharacters
     case 2:
-      return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      return allCapsStr
     case 3:
-      return "abcdefghijklmnopqrstuvwxyz"
+      return allLowCaseStr
     case 4:
-      return "0123456789"
+      return allNumbers
   }
 }
 
@@ -42,9 +51,8 @@ function getRandChar(str){
 }
 
 function getPassword(){
-  let passwordLength = getRandNum()
-  let password = ""
-  while (password.length < passwordLength){
+  let password = ''
+  while(!regex.test(password)){
     password += getRandChar(getRandCharSet())
   }
 
